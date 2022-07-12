@@ -124,10 +124,3 @@ console.log(isValidParenthesis("[(){}[]]],/;p"))}
 
 jsSnippets.palindrome1()
 
-echo "# js_snipps file contains some important algorithm snippets any js developer must know" >> README.md
-git init
-git add .
-git commit -m "Js snippets and algorithms"
-git branch -M main
-git remote add origin https://github.com/Edward-kwabena-Twumasi/js_snipps.git
-git push -u origin main
