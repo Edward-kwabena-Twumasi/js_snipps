@@ -119,8 +119,51 @@ return stack.length===0?true:false
 
 }
 
-console.log(isValidParenthesis("[(){}[]]],/;p"))}
+console.log(isValidParenthesis("[(){}[]]],/;p"))
+},
+"elevator":{
+   "move": (floors,position,level,destination)=>
+   {
+    
+    if (floors<2) {
+        console.log("Cant have an elevator in this building");
+        return;
+    }
+  if (destination>floors || level>floors || position>floors) {
+    console.log("Destination,elevator level and current position can't be greater than total number of floors")
+    return ;
+  }
+
+    if (Math.abs(position-level) >0) {
+       console.log("Elevator coming to your position from : Floor " +level)
+       console.log("wheeeeeeee")
+        setTimeout(() => {
+           level=position;
+            console.log("Elevator now at your position : Floor "+level)
+            console.log("Elevator taking you to your destination.")
+            console.log("wheeeeeeee")
+            setTimeout(() => {
+                position=destination;
+                console.log("Elevator now at your destination : Floor "+position)
+
+            },Math.abs(position-destination)*1000 );
+        }, Math.abs(position-level)*1000);
+        
+    } else {
+        console.log("Elevator already at your position")
+        console.log("wheeeeeeee")
+        setTimeout(() => {
+            position=destination;
+            console.log("Elevator now at your destination : Floor "+position)
+
+        },Math.abs(position-destination)*1000 );
+        
+    }
+
+}
 }
 
-jsSnippets.palindrome1()
+}
+
+jsSnippets.elevator.move(5,2,5,4) //move(Floors,current_position,destination,elevator_level) //elevator level defined in function
 
